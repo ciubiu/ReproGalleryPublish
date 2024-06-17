@@ -1,0 +1,19 @@
+﻿@model IEnumerable<ReproGallery.Models.Repro>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4 p-4">Welcome</h1>
+    
+</div>
+
+<div class="card-group">
+
+    @foreach (var repro in Model)
+    {
+        <partial name="_ReproCard" model="repro" />
+
+    }
+
+</div>

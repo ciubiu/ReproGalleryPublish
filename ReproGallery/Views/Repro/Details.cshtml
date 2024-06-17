@@ -1,0 +1,19 @@
+﻿@model Repro
+
+<h3 class="my-5">
+    @Model.Name
+</h3>
+
+<div class="row gx-5">
+    <img alt="@Model.Name" src="@Model.ImageUrl" class="img-fluid col-5" />
+    <div class="col-7">
+        <h4>@Model.Name</h4>
+        <p>@Model.Description</p>
+        <h3 class="pull-right">@Model.Price.ToString("c")</h3>
+        <div>
+            <p class="button">
+                <a class="btn btn-primary" asp-controller="GalleryCart" asp-action="AddToCart" asp-route-id="@Model.ReproId"> + Add to cart</a>
+            </p>
+        </div>
+    </div>
+</div>

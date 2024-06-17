@@ -1,0 +1,32 @@
+﻿@model ReprosViewModel;
+
+<h1 class="m-5">@Model.CurrentCategory Repros</h1>
+
+<ul class="nav nav-tabs">
+    
+    @{
+        foreach (var category in Model.AllCategories)
+        {
+            string isActive = string.Empty;
+            if (Model.CurrentCategory == category.Name)
+            {
+                isActive = "active";
+            }
+            <li class="nav-item">
+            <a class="nav-link @isActive"  asp-controller="Repro" asp-action="List" asp-route-category="@category.Name">@category.Name</a>
+        </li>
+    }
+
+}
+</ul>
+<p></p>
+
+<div class="row row-cols-1 row-cols-md-3 g-5 p-3 ">
+
+    @foreach (var repro in Model.Repros)
+    {
+        <partial name="_ReproCard" model="repro" />
+
+    }
+
+</div>

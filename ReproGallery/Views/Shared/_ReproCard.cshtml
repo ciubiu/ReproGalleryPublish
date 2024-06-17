@@ -1,0 +1,15 @@
+﻿@model Repro
+<div class="col">
+    <div class="card p-0" style="max-width: 22rem;">
+        <img class="card-img-top" src=@Model.ImageUrl alt="Repro image" style="object-fit:none; height: 250px; width: 100%; display: block">
+        <div class="card-body">
+            <h4 class="d-grid">
+                <span class="p-3 text-end">@Model.Price.ToString("c")</span>
+                <a class="btn btn-primary" asp-controller="GalleryCart" asp-action="AddToCart" asp-route-id="@Model.ReproId"> + Add to cart</a>
+            </h4>
+            <h5 class="card-title pt-3">@Model.Name</h5>
+            <p class="card-text">@Model.Description</p>
+            <a class="btn btn-secondary" asp-controller="Repro" asp-action="Details" asp-route-id="@Model.ReproId">See details</a>
+        </div>
+    </div>
+</div>
